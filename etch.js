@@ -11,20 +11,17 @@ for (i = 0; i < gridSize; i++) {
     container.appendChild(cellRow)
     container.style.cssText = `display:grid; grid-template-columns: repeat(${gridSize}, 50px);`
     cellRow.style.cssText = 'border: solid 1px black; width:50px; height:50px'
-    cellRow.classList.add('cells')
     for (j = 0; j < (gridSize-1); j++) {
         let cellColumn = document.createElement('div')
         container.appendChild(cellColumn)
-        container.style.cssText = `display:grid; grid-template-columns: repeat(${gridSize}, 50px);`
         cellColumn.style.cssText = 'border: solid 1px black; width:50px; height:50px'
-        cellColumn.classList.add('cells')
     }
 }
 
-const gridItem = document.querySelectorAll('.cells')
+const gridItem = document.querySelectorAll('.grid-container>div')
 
 gridItem.forEach(item => {
     item.addEventListener('mouseover', (e) => {
-        e.target.style.cssText = 'background-color:black'
+        e.target.style.cssText = 'border: solid 1px black; width:50px; height:50px; background-color:black'
     })
 });
